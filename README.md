@@ -30,8 +30,8 @@
 ```
 # Create Cluster
 eksctl create cluster --name=myeks23 \
-                      --region=us-east-1 \
-                      --zones=us-east-1a,us-east-1b \
+                      --region=us-east-2 \
+                      --zones=us-east-2a,us-east-2b \
                       --without-nodegroup 
 
 # Get List of clusters
@@ -46,7 +46,7 @@ eksctl get clusters
 ```                   
 # Replace with region & cluster name
 eksctl utils associate-iam-oidc-provider \
-    --region us-east-1 \
+    --region us-east-2 \
     --cluster myeks23 \
     --approve
 ```
@@ -63,7 +63,7 @@ eksctl utils associate-iam-oidc-provider \
  ```
 # Create Public Node Group   
 eksctl create nodegroup --cluster=myeks23 \
-                        --region=us-east-1 \
+                        --region=us-east-2 \
                         --name=myeks23-ng-public1 \
                         --node-type=t3.medium \
                         --nodes=2 \
